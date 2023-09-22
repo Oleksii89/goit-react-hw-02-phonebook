@@ -12,7 +12,7 @@ class App extends Component {
     return this.setState({ name: evt.target.value });
   };
   handleSubmit = evt => {
-    // evt.preventDefault();
+    evt.preventDefault();
     // this.props.onSubmit({ ...this.state });
     // console.log(this.state);
     // this.reset();
@@ -29,7 +29,7 @@ class App extends Component {
               <input
                 type="text"
                 name="name"
-                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 required
                 value={this.state.name}
@@ -37,7 +37,7 @@ class App extends Component {
                 onSubmit={this.handleSubmit}
               />
             </label>
-            <button type="button">Add contact</button>
+            <button type="submit">Add contact</button>
           </form>
         </div>
         <div>
