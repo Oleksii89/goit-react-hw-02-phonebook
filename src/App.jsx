@@ -2,7 +2,7 @@ import ContactForm from 'Components/ContactForm/ContactForm';
 import { Component } from 'react';
 // import { nanoid } from 'nanoid';
 
-export default class App extends Component {
+export class App extends Component {
   state = {
     contacts: [],
     name: '',
@@ -15,7 +15,7 @@ export default class App extends Component {
   };
   render() {
     return (
-      <>
+      <div>
         <h1>Phonebook</h1>
         <ContactForm getContact={this.getContact} />
         <div>
@@ -26,7 +26,7 @@ export default class App extends Component {
             <li></li>
           </ul>
         </div>
-      </>
+      </div>
     );
   }
 }
