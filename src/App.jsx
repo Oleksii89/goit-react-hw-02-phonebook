@@ -1,19 +1,23 @@
-import Form from 'Components/Form/Form';
+import Form from 'Components/ContactForm/ContactForm';
 import { Component } from 'react';
+// import { nanoid } from 'nanoid';
 
 export default class App extends Component {
   state = {
     contacts: [],
-    filter: '',
+    name: '',
+    number: '',
   };
-  formSubmitHandler = data => {
-    console.log(data);
+  getContact = data => {
+    console.log(data.name);
+    this.setState({ contacts: [], name: data.name, number: data.number });
+    console.log(this.state);
   };
   render() {
     return (
       <>
         <h1>Phonebook</h1>
-        <Form onSubmit={this.formSubmitHandler} />
+        <Form getContact={this.getContact} />
         <div>
           <h2>Contacts</h2>
           <ul>
