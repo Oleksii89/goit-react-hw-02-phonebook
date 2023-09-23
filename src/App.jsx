@@ -1,4 +1,4 @@
-import Form from 'Components/ContactForm/ContactForm';
+import ContactForm from 'Components/ContactForm/ContactForm';
 import { Component } from 'react';
 // import { nanoid } from 'nanoid';
 
@@ -17,7 +17,7 @@ export default class App extends Component {
     return (
       <>
         <h1>Phonebook</h1>
-        <Form getContact={this.getContact} />
+        <ContactForm getContact={this.getContact} />
         <div>
           <h2>Contacts</h2>
           <ul>
