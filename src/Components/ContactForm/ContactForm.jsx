@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import { nanoid } from 'nanoid';
 export default class ContactForm extends Component {
   state = {
     name: '',
@@ -8,21 +8,14 @@ export default class ContactForm extends Component {
 
   handleChange = evt => {
     const { name, value } = evt.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value, id: nanoid() });
   };
 
   handleSubmit = evt => {
     evt.preventDefault();
     this.props.getContact(this.state);
-    // this.setState({ name: '', number: '' }); // clear input
+    this.setState({ name: '', number: '' }); // clear input
   };
-  // step 5
-  // if (
-  //   this.state.contacts.some(contact => contact.name === contactData.name)
-  // ) {
-  //   alert(`${contactData.name} is already in contacts`);
-  // return;
-  // }
 
   render() {
     return (
