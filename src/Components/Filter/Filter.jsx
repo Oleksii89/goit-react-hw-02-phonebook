@@ -1,8 +1,11 @@
+import { Input, Label } from 'Components/ContactForm/ContactForm.styled.';
+import { FilterContainer } from './Filter.styled';
+
 export const Filter = ({ filter, onChange }) => {
   return (
-    <div>
-      <label>Find contact by name</label>
-      <input type="text" value={filter} onChange={onChange}></input>
-    </div>
+    <FilterContainer>
+      <Label>Find contact by name</Label>
+      <Input type="text" value={filter} onChange={onChange}></Input>
+    </FilterContainer>
   );
 };

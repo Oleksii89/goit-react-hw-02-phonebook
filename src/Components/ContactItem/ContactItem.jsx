@@ -1,15 +1,18 @@
+import { FilterButton } from 'Components/Filter/Filter.styled';
+import { ContactItemLi } from './ContactItem.styled';
+
 export const ContactIem = ({ contacts, onDeleteContact }) => {
   return contacts.map(({ name, number, id }) => (
-    <li key={id}>
+    <ContactItemLi key={id}>
       {name} : {number}
-      <button
+      <FilterButton
         type="button"
         onClick={() => {
           onDeleteContact(id);
         }}
       >
         Delete
-      </button>
-    </li>
+      </FilterButton>
+    </ContactItemLi>
   ));
 };

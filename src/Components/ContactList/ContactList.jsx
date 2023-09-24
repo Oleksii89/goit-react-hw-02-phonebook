@@ -1,3 +1,5 @@
+import { ContactListUl } from './ContactList.styled';
+
 export const ContactList = ({ children }) => {
-  return <ul>{children}</ul>;
+  return <ContactListUl>{children}</ContactListUl>;
 };
